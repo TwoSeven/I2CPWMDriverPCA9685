@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="I2CPWMDriverTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:I2CPWMDriverTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="540*"/>
+            <RowDefinition Height="751*"/>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="Title" HorizontalAlignment="Left" Margin="10,13,1270,0" TextWrapping="Wrap" Text="I2C PWM Driver Test" VerticalAlignment="Top" Height="67" Width="640" FontSize="48" TextAlignment="Left"/>
+        <ScrollViewer x:Name="txtStatusScrollViewer" Margin="287,0,287,68" HorizontalScrollMode="Enabled" VerticalScrollMode="Enabled" Grid.Row="1" Height="550" VerticalAlignment="Bottom">
+            <TextBlock x:Name="txtStatus" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="18" TextAlignment="Left" Height="Auto" Width="Auto"/>
+        </ScrollViewer>
+        <Button x:Name="btnAllFadeTest" Content="Start Test (all fade)" HorizontalAlignment="Left" Margin="10,228,0,0" VerticalAlignment="Top" Click="btnAllFadeTest_Click" Width="210"/>
+        <Button x:Name="btnWaveFadeTest" Content="Start Test (wave fade)" HorizontalAlignment="Left" Margin="10,268,0,0" VerticalAlignment="Top" Click="btnWaveFadeTest_Click" Width="210"/>
+        <Button x:Name="btnCycleEachOutput" Content="Start Test (cycle each output)" HorizontalAlignment="Left" Margin="10,307,0,0" VerticalAlignment="Top" Click="btnCycleEachOutput_Click"/>
+        <Button x:Name="btnStopAllTests" Content="Stop All Tests" HorizontalAlignment="Left" Margin="553,26,0,0" VerticalAlignment="Top" Click="btnStopAllTests_Click" Width="241" Height="61" FontSize="21.333"/>
+        <Button x:Name="btnResetDevice" Content="Reset Device(s)" HorizontalAlignment="Left" Margin="1024,228,0,0" VerticalAlignment="Top" Click="btnResetDevice_Click"/>
+        <Button x:Name="btnSleep" Content="Sleep" HorizontalAlignment="Left" Margin="1024,270,0,0" VerticalAlignment="Top" Click="btnSleep_Click"/>
+        <Button x:Name="btnWake" Content="Wake" HorizontalAlignment="Left" Margin="1087,270,0,0" VerticalAlignment="Top" Click="btnWake_Click"/>
+        <Button x:Name="btnRestart" Content="Restart (resume)" HorizontalAlignment="Left" Margin="1151,270,0,0" VerticalAlignment="Top" Click="btnRestart_Click"/>
+        <Button x:Name="btnServoTest" Content="Servo Test (full range in 5 steps)" HorizontalAlignment="Left" Margin="389,228,0,0" VerticalAlignment="Top" Click="btnServoTest_Click"/>
+        <Slider x:Name="slideServoLimitCW" HorizontalAlignment="Left" Margin="716,298,0,0" VerticalAlignment="Top" Width="141" Maximum="10" LargeChange="0.1" SmallChange="0.01" StepFrequency="0.01" Minimum="-10" ValueChanged="slideServoPosition_ValueChanged"/>
+        <Slider x:Name="slideServoCenter" HorizontalAlignment="Left" Margin="553,298,0,0" VerticalAlignment="Top" Width="141" Maximum="10" LargeChange="0.1" SmallChange="0.01" StepFrequency="0.01" Minimum="-10" ValueChanged="slideServoPosition_ValueChanged"/>
+        <Slider x:Name="slideServoLimitCCW" HorizontalAlignment="Left" Margin="389,298,0,0" VerticalAlignment="Top" Width="141" Maximum="10" LargeChange="0.1" SmallChange="0.01" StepFrequency="0.01" Minimum="-10" ValueChanged="slideServoPosition_ValueChanged"/>
+        <Slider x:Name="slidePWMFrequency" HorizontalAlignment="Left" Margin="1024,368,0,0" VerticalAlignment="Top" Width="344" Maximum="1000" LargeChange="10" SmallChange="1" Minimum="40" Value="60" ValueChanged="slideFrequency_ValueChanged"/>
+        <TextBlock x:Name="lblServoFrequency" HorizontalAlignment="Left" Margin="1024,350,0,0" TextWrapping="Wrap" Text="Frequency" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lblServoLimitCW" HorizontalAlignment="Left" Margin="712,284,0,0" TextWrapping="Wrap" Text="Adjust Limit CW" VerticalAlignment="Top" Width="145"/>
+        <TextBlock x:Name="lblServoCenter" HorizontalAlignment="Left" Margin="553,284,0,0" TextWrapping="Wrap" Text="Adjust Center" VerticalAlignment="Top" Height="29" Width="141"/>
+        <TextBlock x:Name="lblServoLimitCCW" HorizontalAlignment="Left" Margin="389,284,0,0" TextWrapping="Wrap" Text="Adjust Limit CCW" VerticalAlignment="Top" Width="141"/>
+        <Slider x:Name="slideServoPosition" HorizontalAlignment="Left" Margin="389,369,0,0" VerticalAlignment="Top" Width="468" Maximum="101" LargeChange="10" SmallChange="1" Minimum="-101" ValueChanged="slideServoPosition_ValueChanged" TickFrequency="25"/>
+        <TextBlock x:Name="lblServoPosition" HorizontalAlignment="Left" Margin="389,356,0,0" TextWrapping="Wrap" Text="Control Position (direction %)" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lblServoLimitCW_Copy" HorizontalAlignment="Left" Margin="10,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" Height="68">
+        	<Run Text="LED Tests "/>
+        	<LineBreak/>
+        	<Run Text="(not for use with servos connected)"/>
+        	<LineBreak/>
+        	<Run/>
+        </TextBlock>
+        <TextBlock x:Name="lblServoLimitCW_Copy1" HorizontalAlignment="Left" Margin="1024,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" Height="68">
+        	<Run Text="Module Tests"/>
+        	<LineBreak/>
+        	<Run Text="Tests for global module functionality."/>
+        	<LineBreak/>
+        	<Run/>
+        </TextBlock>
+        <Button x:Name="btnRandomLEDBlinkTest" Content="Start Test (random LED blink)" HorizontalAlignment="Left" Margin="10,344,0,0" VerticalAlignment="Top" Click="btnRandomLEDBlinkTest_Click"/>
+        <Button x:Name="btnAllFullOn" Content="Start Test (all full on)" HorizontalAlignment="Left" Margin="10,381,0,0" VerticalAlignment="Top" Click="btnAllFullOn_Click" Width="210"/>
+        <TextBlock x:Name="lblServoLimitCW_Copy2" HorizontalAlignment="Left" Margin="389,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="506" Height="68">
+        	<Run Text="Servo Tests "/>
+        	<LineBreak/>
+        	<Run Text="Module 1 channel 1.  May damage servo.  Review code and servo specs before running.  Most servos are designed to work at 50 or 60 Hz."/>
+        	<LineBreak/>
+        	<Run/>
+        </TextBlock>
+        <Button x:Name="btnScanI2CBus" Content="Scan I2C Bus for Device(s)" HorizontalAlignment="Left" Margin="1177,26,0,0" VerticalAlignment="Top" Click="btnScanI2CBus_Click"/>
+    </Grid>
+</Page>

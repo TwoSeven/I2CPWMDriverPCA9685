@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleI2CPWMDriverPCA9685", "ExampleI2CPWMDriverPCA9685.csproj", "{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Debug|ARM.ActiveCfg = Debug|ARM
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Debug|ARM.Build.0 = Debug|ARM
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Debug|ARM.Deploy.0 = Debug|ARM
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Debug|x64.ActiveCfg = Debug|x64
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Debug|x64.Build.0 = Debug|x64
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Debug|x64.Deploy.0 = Debug|x64
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Debug|x86.ActiveCfg = Debug|x86
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Debug|x86.Build.0 = Debug|x86
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Debug|x86.Deploy.0 = Debug|x86
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Release|ARM.ActiveCfg = Release|ARM
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Release|ARM.Build.0 = Release|ARM
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Release|ARM.Deploy.0 = Release|ARM
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Release|x64.ActiveCfg = Release|x64
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Release|x64.Build.0 = Release|x64
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Release|x64.Deploy.0 = Release|x64
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Release|x86.ActiveCfg = Release|x86
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Release|x86.Build.0 = Release|x86
+		{FF3B2165-4A48-4C3A-BAC4-7AA060FC04CA}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
